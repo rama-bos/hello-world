@@ -6,3 +6,4 @@ P.S.
 20+ years ago I was good with C++,
 10+ years ago I finished my last programm in Java
 and I was working as Technical Advisor and Project Manager 
+.... step 2
