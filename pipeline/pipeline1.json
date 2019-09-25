@@ -5,14 +5,7 @@
 			{
 				"name": "MLBatchProcessData",
 				"type": "AzureMLBatchExecution",
-				"dependsOn": [
-					{
-						"activity": "dataflow1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -43,9 +36,16 @@
 				}
 			},
 			{
-				"name": "dataflow1",
+				"name": "ExecuteDataFlow1",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "MLBatchProcessData",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
